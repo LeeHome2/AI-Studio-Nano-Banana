@@ -1,0 +1,6 @@
+{
+  "name": "Ai Studio NanoBanana",
+  "description": "Fuse a main image with a style reference or a text prompt using the Gemini 2.5 image model (gemini-2.5-flash-image-preview).",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

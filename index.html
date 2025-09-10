@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Fusion with Gemini</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.run/@google/genai"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1><i class="fa-solid fa-wand-magic-sparkles"></i> Style Fusion with Gemini</h1>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h2>Fuse Your Images with AI</h2>
+        <p>
+          Upload a main image, select a style reference or write a prompt, and let Gemini create a unique fusion.
+        </p>
+      </section>
+
+      <section class="core-app">
+        <div class="input-panel">
+          
+          <div class="upload-section card">
+            <h3>1. Upload Your Image</h3>
+            <div id="upload-area" class="upload-area">
+              <div id="upload-prompt">
+                <i class="fa-solid fa-upload"></i>
+                <p>Drag & drop an image here, or click to select a file</p>
+              </div>
+              <img id="preview-image" src="" alt="Image preview" class="preview-image" />
+              <button id="remove-image-btn" class="remove-btn">&times;</button>
+            </div>
+            <input type="file" id="image-upload" accept="image/*" hidden />
+          </div>
+
+          <div class="style-section card">
+            <h3>2. Select a Style or Write a Prompt</h3>
+            <div id="reference-gallery" class="reference-gallery">
+              <!-- Reference images will be populated by JS -->
+            </div>
+            <textarea id="prompt-input" rows="3" placeholder="Or, describe the changes you want to see... e.g., 'make it a watercolor painting'"></textarea>
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+            <button id="generate-btn" disabled>
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Generate
+            </button>
+        </div>
+
+        <div class="output-panel">
+          <div id="result-section" class="result-section card">
+            <h3>3. Your Fused Image</h3>
+            <div id="result-area" class="result-area">
+              <div id="result-placeholder" class="result-placeholder">
+                <p>Your generated image will appear here.</p>
+              </div>
+              <div id="loader" class="loader" style="display: none;"></div>
+              <img id="result-image" src="" alt="Generated image" class="result-image" />
+              <div id="error-message" class="error-message" style="display: none;"></div>
+            </div>
+            <button id="download-btn" style="display: none;">
+                <i class="fa-solid fa-download"></i> Download Image
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
